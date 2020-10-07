@@ -1,0 +1,11 @@
+FROM openjdk:8-jdk-alpine
+
+ARG JAR_FILE=target/*.jar
+
+COPY ${JAR_FILE} football-league-api.jar
+
+EXPOSE 8081
+
+ENTRYPOINT ["java","-jar","/football-league-api.jar"]
+# sudo docker build -t football-league-api:1.0 .
+# sudo docker run -d -p 8081:8081 -t football-league-api:1.0
