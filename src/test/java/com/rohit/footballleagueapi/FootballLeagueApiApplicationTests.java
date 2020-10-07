@@ -3,6 +3,8 @@ package com.rohit.footballleagueapi;
 
 import static org.junit.Assert.assertTrue;
 
+import java.util.Objects;
+
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -23,9 +25,9 @@ class FootballLeagueApiApplicationTests {
 	private FootballLeagueService service;
 
 	@Test
-	public void getLeaguethenReturnJson() throws Exception {
+	public void getLeagueDetailsTest() throws Exception {
 			FootballLeagueStanding model = new FootballLeagueStanding();
 			Mockito.when(service.getStandings("England", "Championship", "Watford")).thenReturn(model);
-			assertTrue(model != null);
+			assertTrue(Objects.nonNull(model));
 		}
 }
